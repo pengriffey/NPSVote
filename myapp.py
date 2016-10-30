@@ -40,7 +40,8 @@ def post_user():
 def results():
     pr=Votes.query.filter(Votes.hb == "prithvi").count()
     
-    return render_template("result.html",result = result)
+    return render_template("results.html")
+    #return render_template("result.html",result = result)
 
 
 if __name__ == "__main__":

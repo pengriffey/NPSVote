@@ -6,7 +6,7 @@ body {
   text-align: center;
 }
 
-.btn-link{
+li .btn-link{
   margin-top: 15px;
   border:none;
   outline:none;
