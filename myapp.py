@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import request, render_template, redirect,  url_for
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:shruthi63@localhost/NPSElect'
 db = SQLAlchemy(app)
 app.debug=True
 
@@ -35,4 +35,5 @@ def post_user():
 
 
 if __name__ == "__main__":
+    db.create_all()
     app.run()
