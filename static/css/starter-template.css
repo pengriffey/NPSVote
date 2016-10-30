@@ -5,3 +5,15 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+.btn-link{
+  border:none;
+  outline:none;
+  background:none;
+  cursor:pointer;
+  color:#0000EE;
+  padding:0;
+  text-decoration:underline;
+  font-family:inherit;
+  font-size:inherit;
+}

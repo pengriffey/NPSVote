@@ -5,7 +5,8 @@ from flask import request, render_template, redirect,  url_for
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://njmawmcasgapmf:0CVCNvFL4ekB3VWsLK9Kaal_zV@ec2-54-243-212-122.compute-1.amazonaws.com:5432/d5fd58gn4ibb87'
-print (app.config['SQLALCHEMY_DATABASE_URI'])
+
+
 db = SQLAlchemy(app)
 app.debug=True
 
@@ -34,6 +35,12 @@ def post_user():
     db.session.add(vote)
     db.session.commit()
     return redirect(url_for('index'))
+
+@app.route('/nps_results')
+def results():
+    pr=Votes.query.filter(Votes.hb == "prithvi").count()
+    
+    return render_template("result.html",result = result)
 
 
 if __name__ == "__main__":
