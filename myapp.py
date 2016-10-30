@@ -2,8 +2,10 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, render_template, redirect,  url_for
 
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:shruthi63@localhost/NPSElect'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://njmawmcasgapmf:0CVCNvFL4ekB3VWsLK9Kaal_zV@ec2-54-243-212-122.compute-1.amazonaws.com:5432/d5fd58gn4ibb87'
+print (app.config['SQLALCHEMY_DATABASE_URI'])
 db = SQLAlchemy(app)
 app.debug=True
 
