@@ -28,13 +28,17 @@ class Votes(db.Model):
 def index():
     return render_template('vote.html')
 
+@app.route('/thanks')
+def thanks():
+    return render_template('thanks.html')
+
 
 @app.route('/nps_vote', methods=['POST'])
 def post_user():
     vote = Votes(request.form['hg'], request.form['hb'])
     db.session.add(vote)
     db.session.commit()
-    return redirect(url_for('index'))
+    return redirect(url_for('thanks'))
 
 @app.route('/nps_results')
 def results():
