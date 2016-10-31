@@ -25,7 +25,7 @@ class Votes(db.Model):
 
 
 @app.route('/')
-def index():
+def vote():
     return render_template('vote.html')
 
 @app.route('/thanks')
@@ -42,9 +42,15 @@ def post_user():
 
 @app.route('/nps_results')
 def results():
-    pr=Votes.query.filter(Votes.hb == "prithvi").count()
+    prithvi=Votes.query.filter(Votes.hb == "prithvi").count()
+    tanush=Votes.query.filter(Votes.hb == "tanush").count()
+    sneha=Votes.query.filter(Votes.hg == "sneha").count()
+    neha=Votes.query.filter(Votes.hg == "neha").count()
     
-    return render_template("results.html")
+    results={"Prithvi":prithvi,"Tanush":tanush,"Sneha":sneha,"Neha":neha}
+    
+    
+    return render_template("results.html", results=results )
     #return render_template("result.html",result = result)
 
 

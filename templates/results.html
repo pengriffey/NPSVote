@@ -58,8 +58,19 @@
          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">See Results</button>
           <div id="demo" class="collapse">
             <br>
-                These are the results!
-          </div>
+               <table class="table">
+                <thead><h3>Headgirl and Headboy</h3></thead>
+                <tbody>
+                 {% for key, value in results.items() %}
+         
+                    <tr>
+                       <th> {{ key }} </th>
+                       <td> {{ value }} </td>
+                    </tr>
+            
+                 {% endfor %}
+                </tbody>
+              </table>
    
         </div>
     </div>
