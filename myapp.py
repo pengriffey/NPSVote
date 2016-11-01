@@ -47,7 +47,9 @@ def results():
     sneha=Votes.query.filter(Votes.hg == "sneha").count()
     neha=Votes.query.filter(Votes.hg == "neha").count()
     
-    results={"Prithvi":prithvi,"Tanush":tanush,"Sneha":sneha,"Neha":neha}
+    no=sneha+neha
+    print ("Voters",no)
+    results={"Total Number of Votes":no, "Prithvi":prithvi,"Tanush":tanush,"Sneha":sneha,"Neha":neha}
     
     
     return render_template("results.html", results=results )
